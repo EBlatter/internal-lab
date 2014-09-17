@@ -12,9 +12,14 @@ object LoopUntil extends App {
 
   // define the new control-flow structure here
 
+  def loop_until(cond: =>Boolean)(body: =>Unit):Unit = {
+    while (!cond) body
+  }
+  
+  
   var i = 0
   
-  loop_until (i > 9) {
+  loop_until (i > 15) {
       if ( (i % 2) == 0 )
           println(i)
       i += 1
