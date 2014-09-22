@@ -13,19 +13,19 @@ package internal
 object RepeatUntil extends App {
   
   // define the new control-flow structure here
-/*
-  class repeater(body: =>Unit) {
-    def until(cond: => Boolean) {
-      cond
+
+
+  
+  def repeat(body: ⇒Unit) = {
+    new RepeatUntil(body)
+  }
+  
+  class RepeatUntil(body: ⇒Unit) {
+    def until(condition: ⇒Boolean) = {
+      do {
+        body
+      } while(!condition)
     }
-  }
-  
-  def repeat(body: =>Unit):Unit = {
-    new repeater(body) 
-  }
-  
-  def until(cond: =>Boolean):Boolean = {
-	cond
   }
   
   var i = 0
@@ -33,6 +33,6 @@ object RepeatUntil extends App {
       if ( (i % 2) == 0 )
           println(i)
       i += 1
-  } until(i > 9)  */     
+  } until(i > 9)       
 }
 
